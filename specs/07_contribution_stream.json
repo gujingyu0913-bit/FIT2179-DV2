@@ -1,0 +1,92 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "../data/derived_contributions_without_total.csv"
+  },
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "format": "%b %Y",
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "contribution_pct_points",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": {
+        "title": "Contribution to annual CPI (pp)",
+        "labels": false,
+        "ticks": false
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "legend": null
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+        "value": 0.95
+      },
+      "value": 0.22
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "title": "Month",
+        "format": "%b %Y"
+      },
+      {
+        "field": "group",
+        "title": "Group"
+      },
+      {
+        "field": "contribution_pct_points",
+        "title": "Contribution (pp)",
+        "format": ".2f"
+      }
+    ]
+  }
+}

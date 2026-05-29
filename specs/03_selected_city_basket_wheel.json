@@ -1,0 +1,147 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "../data/derived_city_basket_wheel.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum[\"city\"] === \"Melbourne\""
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 55,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "theta": {
+          "field": "unit",
+          "type": "quantitative",
+          "stack": true
+        },
+        "radius": {
+          "field": "annual_change",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              12
+            ],
+            "range": [
+              72,
+              160
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "annual_change",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              3,
+              6,
+              10,
+              12
+            ],
+            "range": [
+              "#2166ac",
+              "#9bd6e7",
+              "#f7fbff",
+              "#f6b26b",
+              "#e34a33",
+              "#8f1d2c"
+            ]
+          },
+          "legend": {
+            "title": "Annual change (%)"
+          }
+        },
+        "order": {
+          "field": "group_order",
+          "type": "ordinal"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+            "value": 1
+          },
+          "value": 0.72
+        },
+        "tooltip": [
+          {
+            "field": "city"
+          },
+          {
+            "field": "group",
+            "title": "Basket group"
+          },
+          {
+            "field": "annual_change",
+            "title": "Annual change (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "local basket wheel"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontWeight": 900,
+        "fontSize": 12,
+        "color": "#40526b"
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ]
+}

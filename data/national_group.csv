@@ -1,0 +1,13 @@
+group,group_full,index,annual_change,monthly_change,category_type,period,group_order,series_id
+Transport,Transport,108.37,8.9,9.16,essential/regulated,2026-03-01,8,A130396688V
+Clothing & footwear,Clothing and footwear,101.67,7.12,-1.92,discretionary,2026-03-01,4,A130391669W
+Housing,Housing,103.13,6.51,0.23,essential/regulated,2026-03-01,5,A130399184V
+Education,Education,104.58,4.79,0.04,essential/regulated,2026-03-01,11,A130390024V
+All groups CPI,All groups CPI,102.44,4.57,1.12,benchmark,2026-03-01,1,A130393720C
+Alcohol & tobacco,Alcohol and tobacco,101.98,4.43,0.84,discretionary/regulated,2026-03-01,3,A130393027F
+Food & non-alcoholic beverages,Food and non-alcoholic beverages,101.96,3.1,0.67,essential/regulated,2026-03-01,2,A130395477A
+Health,Health,101.68,3.04,-0.16,essential/regulated,2026-03-01,7,A130389989T
+Recreation & culture,Recreation and culture,98.74,2.84,-0.7,discretionary,2026-03-01,10,A130393832W
+Insurance & financial services,Insurance and financial services,102.02,2.83,0.8,essential/regulated,2026-03-01,12,A130392761F
+Communication,Communication,100.35,1.41,0.46,essential/regulated,2026-03-01,9,A130391291F
+Furnishings & services,"Furnishings, household equipment and services",99.92,1.38,-0.22,discretionary,2026-03-01,6,A130399198J

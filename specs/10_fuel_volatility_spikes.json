@@ -1,0 +1,162 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 280,
+  "data": {
+    "url": "../data/fuel.csv"
+  },
+  "transform": [
+    {
+      "filter": "isValid(datum.monthly_change)"
+    },
+    {
+      "calculate": "datum.monthly_change >= 0 ? 'rise' : 'fall'",
+      "as": "direction"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#a9bece"
+      },
+      "encoding": {
+        "y": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "title": null,
+            "format": "%Y"
+          }
+        },
+        "y": {
+          "datum": 0
+        },
+        "y2": {
+          "field": "monthly_change"
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "rise",
+              "fall"
+            ],
+            "range": [
+              "#c7292d",
+              "#2166ac"
+            ]
+          },
+          "legend": {
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "date",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "monthly_change",
+            "title": "Monthly movement (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "annual_change",
+            "title": "Annual (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "abs(datum.monthly_change) >= 8"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 100,
+        "stroke": "#ffffff"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "monthly_change",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "rise",
+              "fall"
+            ],
+            "range": [
+              "#c7292d",
+              "#2166ac"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "monthly_change",
+      "type": "quantitative",
+      "axis": {
+        "title": "Monthly fuel movement (%)"
+      }
+    }
+  }
+}

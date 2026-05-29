@@ -1,0 +1,9 @@
+relative_unaffordability,share_income_spent_on_rent,index_score
+Very affordable rents,15% or less,>200
+Affordable rents,15–20%,151–200
+Acceptable rents,20–25%,121–150
+Moderately unaffordable rents,25–30%,101–120
+Unaffordable rents,30–38%,81–100
+Severely unaffordable rents,38–60%,51–80
+Extremely unaffordable rents,60% or more,<50
+Critically unaffordable rents,75% or more,<40

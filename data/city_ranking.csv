@@ -1,0 +1,9 @@
+rank,city,capital_city,state,latitude,longitude,annual_cpi,annual_change,period,source_table,monthly_cpi
+1,Hobart,Hobart,TAS,-42.8821,147.3272,5.1,5.1,2026-03-01 00:00:00,ABS CPI Table 11,
+2,Adelaide,Adelaide,SA,-34.9285,138.6007,4.9,4.9,2026-03-01 00:00:00,ABS CPI Table 11,
+3,Brisbane,Brisbane,QLD,-27.4698,153.0251,4.7,4.7,2026-03-01 00:00:00,ABS CPI Table 11,
+4,Melbourne,Melbourne,VIC,-37.8136,144.9631,4.6,4.6,2026-03-01 00:00:00,ABS CPI Table 11,
+5,Perth,Perth,WA,-31.9523,115.8613,4.6,4.6,2026-03-01 00:00:00,ABS CPI Table 11,
+6,Sydney,Sydney,NSW,-33.8688,151.2093,4.4,4.4,2026-03-01 00:00:00,ABS CPI Table 11,
+7,Canberra,Canberra,ACT,-35.2809,149.13,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,
+8,Darwin,Darwin,NT,-12.4634,130.8456,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,

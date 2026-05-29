@@ -1,0 +1,204 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 315,
+  "data": {
+    "url": "../data/derived_city_profiles.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#dce9f4"
+      },
+      "encoding": {
+        "x": {
+          "datum": 4
+        },
+        "x2": {
+          "datum": 5.3
+        },
+        "y": {
+          "field": "city",
+          "type": "nominal",
+          "sort": [
+            "Hobart",
+            "Adelaide",
+            "Brisbane",
+            "Melbourne",
+            "Perth",
+            "Sydney",
+            "Canberra",
+            "Darwin"
+          ]
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "strokeWidth": 2.4,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              4,
+              5.3
+            ]
+          },
+          "axis": {
+            "title": "Annual CPI (%)"
+          }
+        },
+        "y": {
+          "field": "city",
+          "type": "nominal",
+          "sort": [
+            "Hobart",
+            "Adelaide",
+            "Brisbane",
+            "Melbourne",
+            "Perth",
+            "Sydney",
+            "Canberra",
+            "Darwin"
+          ],
+          "axis": {
+            "title": null,
+            "labelFontWeight": 800
+          }
+        },
+        "size": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              160,
+              760
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              3,
+              6,
+              10,
+              12
+            ],
+            "range": [
+              "#2166ac",
+              "#9bd6e7",
+              "#f7fbff",
+              "#f6b26b",
+              "#e34a33",
+              "#8f1d2c"
+            ]
+          },
+          "legend": null
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum[\"city\"] === \"Melbourne\"",
+            "value": "#071832"
+          },
+          "value": "#ffffff"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum[\"city\"] === \"Melbourne\"",
+            "value": 1
+          },
+          "value": 0.72
+        },
+        "tooltip": [
+          {
+            "field": "rank"
+          },
+          {
+            "field": "city"
+          },
+          {
+            "field": "annual_cpi",
+            "title": "Annual CPI (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 11,
+        "fontWeight": 800,
+        "color": "#27364f"
+      },
+      "encoding": {
+        "x": {
+          "field": "annual_cpi",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "city",
+          "type": "nominal",
+          "sort": [
+            "Hobart",
+            "Adelaide",
+            "Brisbane",
+            "Melbourne",
+            "Perth",
+            "Sydney",
+            "Canberra",
+            "Darwin"
+          ]
+        },
+        "text": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    }
+  ]
+}

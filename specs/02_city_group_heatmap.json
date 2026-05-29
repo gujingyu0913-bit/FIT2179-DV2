@@ -1,0 +1,143 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 415,
+  "data": {
+    "url": "../data/derived_city_group_ordered.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "strokeWidth": 2,
+    "cornerRadius": 3,
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "city",
+      "type": "nominal",
+      "sort": [
+        "Hobart",
+        "Adelaide",
+        "Brisbane",
+        "Melbourne",
+        "Perth",
+        "Sydney",
+        "Canberra",
+        "Darwin"
+      ],
+      "axis": {
+        "title": null,
+        "labelAngle": -35,
+        "labelFontWeight": 800
+      }
+    },
+    "y": {
+      "field": "group",
+      "type": "nominal",
+      "sort": [
+        "All groups CPI",
+        "Food and non-alcoholic beverages",
+        "Alcohol and tobacco",
+        "Clothing and footwear",
+        "Housing",
+        "Furnishings, household equipment and services",
+        "Health",
+        "Transport",
+        "Communication",
+        "Recreation and culture",
+        "Education",
+        "Insurance and financial services"
+      ],
+      "axis": {
+        "title": null,
+        "labelLimit": 230
+      }
+    },
+    "color": {
+      "field": "annual_change",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -2,
+          0,
+          3,
+          6,
+          10,
+          12
+        ],
+        "range": [
+          "#2166ac",
+          "#9bd6e7",
+          "#f7fbff",
+          "#f6b26b",
+          "#e34a33",
+          "#8f1d2c"
+        ]
+      },
+      "title": "Annual change (%)"
+    },
+    "stroke": {
+      "condition": [
+        {
+          "test": "datum[\"city\"] === \"Melbourne\" && (datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\")",
+          "value": "#071832"
+        },
+        {
+          "test": "datum[\"city\"] === \"Melbourne\" || datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+          "value": "#f26a3d"
+        }
+      ],
+      "value": "#ffffff"
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum[\"city\"] === \"Melbourne\" || datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+        "value": 1
+      },
+      "value": 0.82
+    },
+    "tooltip": [
+      {
+        "field": "city"
+      },
+      {
+        "field": "group",
+        "title": "Basket group"
+      },
+      {
+        "field": "annual_change",
+        "title": "Annual change (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "latest_period": "2026-03-01 00:00:00",
+  "highest_city": {
+    "rank": 1,
+    "city": "Hobart",
+    "state": "TAS",
+    "latitude": -42.8821,
+    "longitude": 147.3272,
+    "annual_cpi": 5.1,
+    "annual_change": 5.1,
+    "period": "2026-03-01 00:00:00",
+    "top_group": "Transport",
+    "top_group_change": 9.6,
+    "story": "Hobart: 5.1% annual CPI; hottest basket group is Transport (9.6%)."
+  },
+  "lowest_city": {
+    "rank": 7,
+    "city": "Canberra",
+    "state": "ACT",
+    "latitude": -35.2809,
+    "longitude": 149.13,
+    "annual_cpi": 4.2,
+    "annual_change": 4.2,
+    "period": "2026-03-01 00:00:00",
+    "top_group": "Transport",
+    "top_group_change": 7.3,
+    "story": "Canberra: 4.2% annual CPI; hottest basket group is Transport (7.3%)."
+  },
+  "highest_national_group": {
+    "group": "Transport",
+    "group_full": "Transport",
+    "index": 108.37,
+    "annual_change": 8.9,
+    "monthly_change": 9.16,
+    "category_type": "essential/regulated",
+    "period": "2026-03-01",
+    "group_order": 8,
+    "series_id": "A130396688V"
+  },
+  "latest_wage_gap": {
+    "period": "2026-03-01",
+    "date": "2026-03-01",
+    "wpi_index": 160.3,
+    "cpi_index": 102.44,
+    "wpi_annual_change": 3.22,
+    "cpi_annual_change": 4.573,
+    "wage_minus_cpi_gap": -1.354,
+    "wpi_series_id": "A2603609J",
+    "cpi_series_id": "A130393720C",
+    "gap_label": "-1.4 pp"
+  }
+}

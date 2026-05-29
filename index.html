@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Australia's Cost-of-Living Heat Map</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="top">
+      <div class="hero-card">
+        <div class="kicker">Australian inflation · 2026</div>
+        <h1>Australia is not feeling one inflation rate.</h1>
+        <p class="lead">CPI is often reported as one national number. However, that number does not show where the pressure is stronger, or which everyday costs are driving it. This visualisation starts with city differences, then breaks inflation down into basket groups, monthly movements, wages and rent pressure.</p>
+        <div class="hero-metrics">
+          <div class="metric"><strong id="heroCityMetric">4.6%</strong><span id="heroCityLabel">Melbourne annual CPI</span></div>
+          <div class="metric"><strong id="heroGroupMetric">8.9%</strong><span id="heroGroupLabel">Transport national annual change</span></div>
+          <div class="metric"><strong id="heroTopMetric">Transport</strong><span id="heroTopLabel">hottest local basket</span></div>
+        </div>
+        <div class="callout" id="selectedStory">The summary cards act as a quick reference point. They change with the selected city and basket group, so the same comparison can be followed across the charts.</div>
+      </div>
+      <div class="story-map">
+        <div class="hero-note"><b>How to read:</b> Larger and warmer bubbles show higher annual CPI. Use the city and basket controls, or click directly on a chart, to update the comparison. The selected city and category stay highlighted through the page.</div>
+      </div>
+    </section>
+
+    <div class="controls-shell">
+      <div class="controls">
+        <label for="cityControl">Follow city</label>
+        <select id="cityControl" aria-label="Choose city"></select>
+        <label for="groupControl">Follow basket group</label>
+        <select id="groupControl" aria-label="Choose basket group"></select>
+        <div class="hint">Tip: Use the controls above to choose a city or basket group. The map and related charts will update to show different inflation patterns.</div>
+      </div>
+    </div>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <div class="eyebrow">Chapter 1 · City differences</div>
+        <h2>A national CPI number hides local pressure.</h2>
+        <p>The first step is to look at geography. If inflation is only read as one national figure, it is easy to miss that some capital cities face stronger price pressure than others.</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card">
+          <h4>1. Interactive CPI map</h4>
+          <p>The map is the starting point of the story. It shows that inflation is not felt evenly across capital cities. Use the controls above to compare how different cities and basket groups change the pattern.</p>
+         <div class="map-wrapper">
+  <div class="map-zoom-floating">
+    <button id="zoomInBtn" type="button">+</button>
+    <button id="zoomOutBtn" type="button">−</button>
+    <button id="resetZoomBtn" type="button">Reset</button>
+  </div>
+
+  <div class="chart tall" id="mapChart"></div>
+</div>
+<p class="chart-note">
+  The map gives a city-level overview. Use the controls above to compare how inflation pressure changes across cities and basket groups.
+</p>
+        </div>
+        <div class="chart-card">
+          <h4>2. City pressure ladder</h4>
+          <p>
+  The ladder turns the map into a clearer comparison. It shows whether the selected city sits near the top of the inflation pattern or closer to the lower end.
+</p>
+          <div class="chart" id="rankLadder"></div>
+          <div class="annotation-strip">
+            <span class="pill hot">Warmer = higher CPI</span>
+            <span class="pill">Selected: <span id="chapterCity">Melbourne</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <p class="eyebrow">CHAPTER 2 · BASKET PROFILE</p>
+<h2>The same CPI headline can come from different baskets.</h2>
+<p>
+  After comparing cities, the next question is what creates the difference. Breaking CPI into basket groups shows whether pressure is coming from transport, housing, food, recreation or other spending areas.
+</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card full">
+          <h4>3. City × basket heatmap</h4>
+          <p>
+  The heatmap compares each city across CPI basket groups. Darker and warmer cells show stronger price growth, helping reveal which spending areas are shaping each city’s inflation profile.
+</p>
+          <div class="chart tall" id="cityHeatmap"></div>
+          <p class="chart-note">
+  Annotation: The heatmap moves the story from where inflation is higher to what is driving it. Warmer cells highlight basket groups with stronger local pressure.
+</p>
+        </div>
+        <div class="chart-card">
+          <h4>4. Selected-city basket wheel</h4><p>
+  This chart focuses on the selected city. It shows which basket groups are doing more of the work behind the headline CPI number.
+
+</p>
+          <div class="chart" id="cityWheel"></div>
+        </div>
+        <div class="narrative">
+          <h3>For <span id="chapterCityText">the selected city</span>, the pressure is not spread evenly across the basket.</h3>
+          <p>This is why the story does not stop at the city ranking. Two cities can have similar headline CPI, but the reason behind the pressure may be different. For households, that difference matters because transport, rent and food are felt in different ways.</p>
+          <div class="callout">The selected city is used as a case study: first locate it on the map, then look inside its basket to see what is driving the pressure.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <div class="eyebrow">Chapter 3 · National comparison</div>
+        <h2>The national basket gives the baseline.</h2>
+        <p>A local pattern is easier to understand when it is compared with the national basket. This section shows whether the selected category is part of a wider Australian trend or a stronger local pressure.</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card full">
+          <h4>5. CPI basket dot-matrix</h4>
+          <p>The dot-matrix makes larger CPI movements visually heavier. It highlights which basket groups are contributing most to the national inflation story. Transport stands out as the strongest national pressure, while several other categories remain much lighter. This makes the basket profile uneven rather than evenly spread across all spending groups.
+</p>
+          <div class="chart tall" id="basketDots"></div>
+        </div>
+        <div class="chart-card">
+          <h4>6. Monthly shock vs annual heat</h4>
+          <p>Annual CPI and monthly movement tell different stories. A category can look high over the year but be cooling recently, or look moderate overall while suddenly rising in the latest month.</p>
+          <div class="chart" id="monthlyAnnual"></div>
+        </div>
+        <div class="narrative">
+          <h3>Following: <span id="chapterGroup">Transport</span></h3>
+          <p>This comparison helps explain why inflation can feel confusing. People may hear that annual inflation is easing, but still notice a sharp monthly increase in a specific bill or service.</p>
+          <div class="callout">This section shifts the story from “which category is high?” to “what kind of pressure is this category creating?”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <div class="eyebrow">Chapter 4 · Drivers over time</div>
+        <h2>Inflation is a moving mix, not a fixed ranking.</h2>
+        <p>A ranking only captures one moment. The time-based charts show whether pressure is building, cooling, or moving between goods and services.</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card full">
+          <h3>7. Contribution stream</h3>
+<p>
+  This stream chart shows how the CPI mix changes over time. Some small gaps appear because the contribution data is not available for every group in every month.
+  I kept the gaps rather than smoothing over them, because connecting missing values would make the pattern look more certain than it really is.
+</p>
+          <div class="chart" id="contribStream"></div>
+          <p class="chart-note">
+  Note: Small gaps appear where contribution data is not available for every basket group. These gaps do not represent zero contribution.
+</p>
+        </div>
+        <div class="chart-card">
+          <h4>8. Goods vs services pulse strip</h4>
+          <p>The pulse strip separates short-term pressure from goods and services. This makes it easier to see whether recent inflation is coming from physical items or from service costs.</p>
+          <div class="chart short" id="goodsPulse"></div>
+        </div>
+        <div class="narrative">
+          <h3>Why the time view matters</h3>
+          <p>Households do not experience inflation as one clean yearly number. Monthly movement shows whether pressure is persistent, temporary, or shifting into a different part of the economy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <div class="eyebrow">Chapter 5 · Everyday essentials</div>
+        <h2>Some categories feel sharper because they affect daily life.</h2>
+        <p>Rent, electricity and fuel are regular bills or sudden price changes. They can make inflation feel stronger than the headline CPI number suggests.</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card full">
+          <h4>9. Essential shock calendar</h4>
+          <p>The calendar shows that essentials do not move smoothly. Repeated red and blue tiles help explain why households can feel pressure through sudden increases as well as regular bills.</p>
+         <div class="chart calendar-chart" id="essentialCalendar"></div>
+        </div>
+        <div class="chart-card">
+          <h4>10. Fuel volatility spikes</h4>
+          <p>Fuel is separated because it often changes sharply from month to month. These spikes can make inflation feel unstable even when the annual CPI number looks moderate.</p>
+          <div class="chart" id="fuelSpikes"></div>
+        </div>
+        <div class="narrative">
+          <h3>Why volatility matters</h3>
+          <p>People notice repeated bills and sudden price changes, not only the annual CPI figure. This is why the story separates steady inflation pressure from categories that move sharply month to month.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-title">
+        <div class="eyebrow">Chapter 6 · Household pressure</div>
+        <h2>Can households absorb the pressure?</h2>
+        <p>The final section connects price changes to income and rent pressure. Inflation becomes a cost-of-living problem when wages do not keep up, or when rent takes a large share of household income.</p>
+      </div>
+      <div class="section-card grid-2">
+        <div class="chart-card">
+          <h4>11. Wage–CPI gap dumbbells</h4>
+          <p>This chart compares CPI with wage growth. When CPI rises faster than wages, households lose purchasing power because income has less room to absorb price increases.</p>
+          <div class="chart" id="wageGap"></div>
+          <p class="chart-note">
+  Note: Only periods with both wage and CPI data are shown, so missing wage observations are not treated as zero.
+</p>
+        </div>
+        <div class="chart-card">
+          <h4>12. Rental stress risk gauge</h4>
+          <p>The 30% line is used as a stress threshold. It shows why rent is not just another CPI category: high rent can reduce a household’s ability to absorb other price increases.</p>
+          <div class="chart" id="housingStress"></div>
+        </div>
+        <div class="narrative full">
+          <h3>Ending insight</h3>
+          <p>Overall, I found that CPI is useful as a headline, but it does not explain how inflation is actually felt. The story becomes clearer only after breaking it down by city, basket group, monthly movement, wages and rent pressure. </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+  <p>
+    <strong>Author:</strong> Jingyu Gu ·
+    <strong>Date:</strong> May 2026 
+    
+  </p>
+
+  <p>
+    <strong>Data sources:</strong>
+    This visualisation uses publicly available data from the
+    <a href="https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release#data-downloads" target="_blank" rel="noopener">
+      Australian Bureau of Statistics Consumer Price Index
+    </a>,
+    the
+    <a href="https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/wage-price-index-australia/latest-release#data-downloads" target="_blank" rel="noopener">
+      Australian Bureau of Statistics Wage Price Index
+    </a>,
+    and housing affordability information from
+    <a href="https://www.aihw.gov.au/reports/australias-welfare/housing-affordability" target="_blank" rel="noopener">
+      AIHW
+    </a>
+    and
+    <a href="https://www.sgsep.com.au/" target="_blank" rel="noopener">
+      SGS Economics and Planning
+    </a>.
+  </p>
+
+  <p>
+    <strong>Data preparation:</strong>
+    The original source tables were cleaned and reshaped into smaller datasets for this project, including city-level CPI profiles, basket-category comparisons, monthly movement indicators, wage-inflation comparisons and housing stress variables.
+  </p>
+
+  <p>
+    <strong>AI acknowledgement:</strong>
+    Generative AI was used to help refine wording, organise code and troubleshoot Vega-Lite specifications. I checked and edited the final content, charts and interpretations myself.
+  </p>
+</footer>
+  </main>
+  <script src="visualisations.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 520,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 720,
+    "translate": [
+      440,
+      270
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            10,
+            10
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#d6e7f1",
+        "strokeWidth": 0.7,
+        "opacity": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#d8e3ea",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "../data/derived_city_profiles.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.18,
+        "stroke": "#ffffff",
+        "strokeWidth": 0
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              4,
+              5.2
+            ],
+            "range": [
+              1500,
+              4700
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              3,
+              6,
+              10,
+              12
+            ],
+            "range": [
+              "#2166ac",
+              "#9bd6e7",
+              "#f7fbff",
+              "#f6b26b",
+              "#e34a33",
+              "#8f1d2c"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "../data/derived_city_profiles.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "strokeWidth": 2.4,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              4,
+              5.2
+            ],
+            "range": [
+              130,
+              720
+            ]
+          },
+          "title": "Annual CPI"
+        },
+        "color": {
+          "field": "annual_cpi",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              3,
+              6,
+              10,
+              12
+            ],
+            "range": [
+              "#2166ac",
+              "#9bd6e7",
+              "#f7fbff",
+              "#f6b26b",
+              "#e34a33",
+              "#8f1d2c"
+            ]
+          },
+          "title": "Annual CPI (%)"
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum[\"city\"] === \"Melbourne\"",
+            "value": "#091a37"
+          },
+          "value": "#ffffff"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum[\"city\"] === \"Melbourne\"",
+            "value": 1
+          },
+          "value": 0.76
+        },
+        "tooltip": [
+          {
+            "field": "city",
+            "type": "nominal",
+            "title": "City"
+          },
+          {
+            "field": "annual_cpi",
+            "type": "quantitative",
+            "title": "Annual CPI (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "rank",
+            "type": "ordinal",
+            "title": "Rank"
+          },
+          {
+            "field": "top_group",
+            "type": "nominal",
+            "title": "Top local pressure"
+          },
+          {
+            "field": "top_group_change",
+            "type": "quantitative",
+            "title": "Top group (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/derived_city_profiles.csv"
+      },
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "fontSize": 11,
+        "fontWeight": 800,
+        "color": "#13203a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "city"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum[\"city\"] === \"Melbourne\"",
+            "value": 1
+          },
+          "value": 0.52
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 340,
+  "data": {
+    "url": "../data/monthly_vs_annual.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#c8d8e5",
+        "strokeDash": [
+          4,
+          4
+        ]
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#c8d8e5",
+        "strokeDash": [
+          4,
+          4
+        ]
+      },
+      "encoding": {
+        "y": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "strokeWidth": 2,
+        "size": 220,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "monthly_change",
+          "type": "quantitative",
+          "axis": {
+            "title": "Latest monthly movement (%)"
+          }
+        },
+        "y": {
+          "field": "annual_change",
+          "type": "quantitative",
+          "axis": {
+            "title": "Annual change (%)"
+          }
+        },
+        "color": {
+          "field": "category_type",
+          "type": "nominal",
+          "legend": {
+            "title": "Basket type"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+            "value": "#071832"
+          },
+          "value": "#ffffff"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\"",
+            "value": 1
+          },
+          "value": 0.66
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "annual_change",
+            "format": ".1f",
+            "title": "Annual (%)"
+          },
+          {
+            "field": "monthly_change",
+            "format": ".1f",
+            "title": "Monthly (%)"
+          },
+          {
+            "field": "category_type",
+            "title": "Type"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum[\"group\"] === \"Transport\" || datum[\"group_full\"] === \"Transport\""
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dx": 10,
+        "dy": -10,
+        "align": "left",
+        "fontWeight": 900,
+        "color": "#13203a"
+      },
+      "encoding": {
+        "x": {
+          "field": "monthly_change",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "annual_change",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "group"
+        }
+      }
+    }
+  ]
+}

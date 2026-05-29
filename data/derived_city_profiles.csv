@@ -1,0 +1,9 @@
+rank,city,state,latitude,longitude,annual_cpi,annual_change,period,top_group,top_group_change,story
+1,Hobart,TAS,-42.8821,147.3272,5.1,5.1,2026-03-01 00:00:00,Transport,9.6,Hobart: 5.1% annual CPI; hottest basket group is Transport (9.6%).
+2,Adelaide,SA,-34.9285,138.6007,4.9,4.9,2026-03-01 00:00:00,Transport,10.9,Adelaide: 4.9% annual CPI; hottest basket group is Transport (10.9%).
+3,Brisbane,QLD,-27.4698,153.0251,4.7,4.7,2026-03-01 00:00:00,Transport,8.8,Brisbane: 4.7% annual CPI; hottest basket group is Transport (8.8%).
+4,Melbourne,VIC,-37.8136,144.9631,4.6,4.6,2026-03-01 00:00:00,Transport,9.8,Melbourne: 4.6% annual CPI; hottest basket group is Transport (9.8%).
+5,Perth,WA,-31.9523,115.8613,4.6,4.6,2026-03-01 00:00:00,Transport,10.4,Perth: 4.6% annual CPI; hottest basket group is Transport (10.4%).
+6,Sydney,NSW,-33.8688,151.2093,4.4,4.4,2026-03-01 00:00:00,Transport,7.3,Sydney: 4.4% annual CPI; hottest basket group is Transport (7.3%).
+7,Canberra,ACT,-35.2809,149.13,4.2,4.2,2026-03-01 00:00:00,Transport,7.3,Canberra: 4.2% annual CPI; hottest basket group is Transport (7.3%).
+8,Darwin,NT,-12.4634,130.8456,4.2,4.2,2026-03-01 00:00:00,Transport,8.5,Darwin: 4.2% annual CPI; hottest basket group is Transport (8.5%).

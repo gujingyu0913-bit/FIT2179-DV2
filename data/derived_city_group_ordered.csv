@@ -1,0 +1,97 @@
+city,capital_city,state,group,cpi_group,annual_change,annual_cpi,period,source_table,group_full,group_order
+Sydney,Sydney,NSW,All groups CPI,All groups CPI,4.4,4.4,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Melbourne,Melbourne,VIC,All groups CPI,All groups CPI,4.6,4.6,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Brisbane,Brisbane,QLD,All groups CPI,All groups CPI,4.7,4.7,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Adelaide,Adelaide,SA,All groups CPI,All groups CPI,4.9,4.9,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Perth,Perth,WA,All groups CPI,All groups CPI,4.6,4.6,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Hobart,Hobart,TAS,All groups CPI,All groups CPI,5.1,5.1,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Darwin,Darwin,NT,All groups CPI,All groups CPI,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Canberra,Canberra,ACT,All groups CPI,All groups CPI,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,All groups CPI,1
+Sydney,Sydney,NSW,Food and non-alcoholic beverages,Food and non-alcoholic beverages,3.4,3.4,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Melbourne,Melbourne,VIC,Food and non-alcoholic beverages,Food and non-alcoholic beverages,3.2,3.2,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Brisbane,Brisbane,QLD,Food and non-alcoholic beverages,Food and non-alcoholic beverages,2.6,2.6,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Adelaide,Adelaide,SA,Food and non-alcoholic beverages,Food and non-alcoholic beverages,2.6,2.6,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Perth,Perth,WA,Food and non-alcoholic beverages,Food and non-alcoholic beverages,2.9,2.9,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Hobart,Hobart,TAS,Food and non-alcoholic beverages,Food and non-alcoholic beverages,4.3,4.3,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Darwin,Darwin,NT,Food and non-alcoholic beverages,Food and non-alcoholic beverages,2.9,2.9,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Canberra,Canberra,ACT,Food and non-alcoholic beverages,Food and non-alcoholic beverages,3.0,3.0,2026-03-01 00:00:00,ABS CPI Table 11,Food and non-alcoholic beverages,2
+Sydney,Sydney,NSW,Alcohol and tobacco,Alcohol and tobacco,3.3,3.3,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Melbourne,Melbourne,VIC,Alcohol and tobacco,Alcohol and tobacco,5.1,5.1,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Brisbane,Brisbane,QLD,Alcohol and tobacco,Alcohol and tobacco,4.7,4.7,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Adelaide,Adelaide,SA,Alcohol and tobacco,Alcohol and tobacco,5.8,5.8,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Perth,Perth,WA,Alcohol and tobacco,Alcohol and tobacco,4.0,4.0,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Hobart,Hobart,TAS,Alcohol and tobacco,Alcohol and tobacco,8.2,8.2,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Darwin,Darwin,NT,Alcohol and tobacco,Alcohol and tobacco,4.6,4.6,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Canberra,Canberra,ACT,Alcohol and tobacco,Alcohol and tobacco,4.3,4.3,2026-03-01 00:00:00,ABS CPI Table 11,Alcohol and tobacco,3
+Sydney,Sydney,NSW,Clothing and footwear,Clothing and footwear,7.2,7.2,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Melbourne,Melbourne,VIC,Clothing and footwear,Clothing and footwear,7.4,7.4,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Brisbane,Brisbane,QLD,Clothing and footwear,Clothing and footwear,7.5,7.5,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Adelaide,Adelaide,SA,Clothing and footwear,Clothing and footwear,5.8,5.8,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Perth,Perth,WA,Clothing and footwear,Clothing and footwear,7.0,7.0,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Hobart,Hobart,TAS,Clothing and footwear,Clothing and footwear,7.6,7.6,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Darwin,Darwin,NT,Clothing and footwear,Clothing and footwear,6.2,6.2,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Canberra,Canberra,ACT,Clothing and footwear,Clothing and footwear,5.9,5.9,2026-03-01 00:00:00,ABS CPI Table 11,Clothing and footwear,4
+Sydney,Sydney,NSW,Housing,Housing,6.6,6.6,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Melbourne,Melbourne,VIC,Housing,Housing,5.9,5.9,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Brisbane,Brisbane,QLD,Housing,Housing,7.7,7.7,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Adelaide,Adelaide,SA,Housing,Housing,6.7,6.7,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Perth,Perth,WA,Housing,Housing,6.7,6.7,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Hobart,Hobart,TAS,Housing,Housing,5.4,5.4,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Darwin,Darwin,NT,Housing,Housing,5.5,5.5,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Canberra,Canberra,ACT,Housing,Housing,5.1,5.1,2026-03-01 00:00:00,ABS CPI Table 11,Housing,5
+Sydney,Sydney,NSW,"Furnishings, household equipment and services","Furnishings, household equipment and services",0.9,0.9,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Melbourne,Melbourne,VIC,"Furnishings, household equipment and services","Furnishings, household equipment and services",1.2,1.2,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Brisbane,Brisbane,QLD,"Furnishings, household equipment and services","Furnishings, household equipment and services",2.3,2.3,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Adelaide,Adelaide,SA,"Furnishings, household equipment and services","Furnishings, household equipment and services",1.7,1.7,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Perth,Perth,WA,"Furnishings, household equipment and services","Furnishings, household equipment and services",1.3,1.3,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Hobart,Hobart,TAS,"Furnishings, household equipment and services","Furnishings, household equipment and services",1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Darwin,Darwin,NT,"Furnishings, household equipment and services","Furnishings, household equipment and services",2.8,2.8,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Canberra,Canberra,ACT,"Furnishings, household equipment and services","Furnishings, household equipment and services",2.7,2.7,2026-03-01 00:00:00,ABS CPI Table 11,"Furnishings, household equipment and services",6
+Sydney,Sydney,NSW,Health,Health,2.8,2.8,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Melbourne,Melbourne,VIC,Health,Health,3.4,3.4,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Brisbane,Brisbane,QLD,Health,Health,3.0,3.0,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Adelaide,Adelaide,SA,Health,Health,3.5,3.5,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Perth,Perth,WA,Health,Health,2.8,2.8,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Hobart,Hobart,TAS,Health,Health,2.6,2.6,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Darwin,Darwin,NT,Health,Health,0.4,0.4,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Canberra,Canberra,ACT,Health,Health,3.3,3.3,2026-03-01 00:00:00,ABS CPI Table 11,Health,7
+Sydney,Sydney,NSW,Transport,Transport,7.3,7.3,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Melbourne,Melbourne,VIC,Transport,Transport,9.8,9.8,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Brisbane,Brisbane,QLD,Transport,Transport,8.8,8.8,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Adelaide,Adelaide,SA,Transport,Transport,10.9,10.9,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Perth,Perth,WA,Transport,Transport,10.4,10.4,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Hobart,Hobart,TAS,Transport,Transport,9.6,9.6,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Darwin,Darwin,NT,Transport,Transport,8.5,8.5,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Canberra,Canberra,ACT,Transport,Transport,7.3,7.3,2026-03-01 00:00:00,ABS CPI Table 11,Transport,8
+Sydney,Sydney,NSW,Communication,Communication,1.5,1.5,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Melbourne,Melbourne,VIC,Communication,Communication,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Brisbane,Brisbane,QLD,Communication,Communication,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Adelaide,Adelaide,SA,Communication,Communication,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Perth,Perth,WA,Communication,Communication,1.3,1.3,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Hobart,Hobart,TAS,Communication,Communication,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Darwin,Darwin,NT,Communication,Communication,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Canberra,Canberra,ACT,Communication,Communication,1.6,1.6,2026-03-01 00:00:00,ABS CPI Table 11,Communication,9
+Sydney,Sydney,NSW,Recreation and culture,Recreation and culture,3.1,3.1,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Melbourne,Melbourne,VIC,Recreation and culture,Recreation and culture,2.2,2.2,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Brisbane,Brisbane,QLD,Recreation and culture,Recreation and culture,2.5,2.5,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Adelaide,Adelaide,SA,Recreation and culture,Recreation and culture,2.7,2.7,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Perth,Perth,WA,Recreation and culture,Recreation and culture,4.0,4.0,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Hobart,Hobart,TAS,Recreation and culture,Recreation and culture,3.6,3.6,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Darwin,Darwin,NT,Recreation and culture,Recreation and culture,3.6,3.6,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Canberra,Canberra,ACT,Recreation and culture,Recreation and culture,3.0,3.0,2026-03-01 00:00:00,ABS CPI Table 11,Recreation and culture,10
+Sydney,Sydney,NSW,Education,Education,4.7,4.7,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Melbourne,Melbourne,VIC,Education,Education,4.8,4.8,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Brisbane,Brisbane,QLD,Education,Education,4.8,4.8,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Adelaide,Adelaide,SA,Education,Education,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Perth,Perth,WA,Education,Education,5.3,5.3,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Hobart,Hobart,TAS,Education,Education,3.8,3.8,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Darwin,Darwin,NT,Education,Education,3.4,3.4,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Canberra,Canberra,ACT,Education,Education,5.9,5.9,2026-03-01 00:00:00,ABS CPI Table 11,Education,11
+Sydney,Sydney,NSW,Insurance and financial services,Insurance and financial services,3.2,3.2,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Melbourne,Melbourne,VIC,Insurance and financial services,Insurance and financial services,3.6,3.6,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Brisbane,Brisbane,QLD,Insurance and financial services,Insurance and financial services,1.9,1.9,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Adelaide,Adelaide,SA,Insurance and financial services,Insurance and financial services,4.1,4.1,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Perth,Perth,WA,Insurance and financial services,Insurance and financial services,0.3,0.3,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Hobart,Hobart,TAS,Insurance and financial services,Insurance and financial services,4.2,4.2,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Darwin,Darwin,NT,Insurance and financial services,Insurance and financial services,2.9,2.9,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12
+Canberra,Canberra,ACT,Insurance and financial services,Insurance and financial services,1.4,1.4,2026-03-01 00:00:00,ABS CPI Table 11,Insurance and financial services,12

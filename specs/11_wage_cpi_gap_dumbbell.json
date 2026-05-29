@@ -1,0 +1,160 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 260,
+  "layer": [
+    {
+      "data": {
+        "url": "../data/derived_wage_gap_clean.csv"
+      },
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 5,
+        "opacity": 0.42
+      },
+      "encoding": {
+        "y": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "title": null,
+            "format": "%b %Y"
+          }
+        },
+        "x": {
+          "field": "cpi_annual_change",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1.5,
+              5
+            ]
+          },
+          "axis": {
+            "title": "Annual change (%)"
+          }
+        },
+        "x2": {
+          "field": "wpi_annual_change"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.wage_minus_cpi_gap >= 0",
+            "value": "#1b9e77"
+          },
+          "value": "#c7292d"
+        },
+        "tooltip": [
+          {
+            "field": "date",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "wpi_annual_change",
+            "title": "Wages (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "cpi_annual_change",
+            "title": "CPI (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "wage_minus_cpi_gap",
+            "title": "Wage-CPI gap (pp)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/wage_gap_long.csv"
+      },
+      "transform": [
+        {
+          "filter": "isValid(datum.annual_change)"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "size": 130,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "x": {
+          "field": "annual_change",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Wage Price Index",
+              "Consumer Price Index"
+            ],
+            "range": [
+              "#1b9e77",
+              "#c7292d"
+            ]
+          },
+          "legend": {
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "date",
+            "type": "temporal",
+            "format": "%b %Y"
+          },
+          {
+            "field": "series"
+          },
+          {
+            "field": "annual_change",
+            "title": "Annual (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

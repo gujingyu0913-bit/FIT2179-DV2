@@ -1,0 +1,124 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 420,
+  "data": {
+    "url": "../data/derived_essential_shocks.csv"
+  },
+  "facet": {
+    "row": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "header": {
+        "labelFontSize": 13,
+        "labelFontWeight": 900,
+        "labelColor": "#13203a"
+      }
+    }
+  },
+  "spec": {
+    "width": "container",
+    "height": 105,
+    "mark": {
+      "type": "rect",
+      "cornerRadius": 3
+    },
+    "encoding": {
+      "x": {
+        "field": "month",
+        "type": "ordinal",
+        "axis": {
+          "title": null,
+          "labelExpr": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value-1]"
+        }
+      },
+      "y": {
+        "field": "year",
+        "type": "ordinal",
+        "sort": "descending",
+        "axis": {
+          "title": null
+        }
+      },
+      "color": {
+        "field": "monthly_change",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            -10,
+            0,
+            10
+          ],
+          "range": [
+            "#2166ac",
+            "#f7fbff",
+            "#c7292d"
+          ]
+        },
+        "title": "Monthly change (%)"
+      },
+      "opacity": {
+        "condition": {
+          "test": "isValid(datum.monthly_change)",
+          "value": 1
+        },
+        "value": 0.1
+      },
+      "tooltip": [
+        {
+          "field": "category"
+        },
+        {
+          "field": "date",
+          "type": "temporal",
+          "format": "%b %Y"
+        },
+        {
+          "field": "monthly_change",
+          "title": "Monthly (%)",
+          "format": ".2f"
+        },
+        {
+          "field": "annual_change",
+          "title": "Annual (%)",
+          "format": ".1f"
+        }
+      ]
+    }
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  }
+}

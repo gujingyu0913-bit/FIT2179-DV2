@@ -1,0 +1,170 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 170,
+  "layer": [
+    {
+      "data": {
+        "url": "../data/derived_housing_threshold_segments.csv"
+      },
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 5
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              60
+            ]
+          },
+          "axis": {
+            "title": "Share of income spent on rent (%)"
+          }
+        },
+        "x2": {
+          "field": "end"
+        },
+        "y": {
+          "datum": "Rental affordability threshold"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "range": [
+              "#1b9e77",
+              "#66c2a5",
+              "#b2df8a",
+              "#fee08b",
+              "#fdae61",
+              "#f46d43",
+              "#d73027",
+              "#8f1d2c"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "category"
+          },
+          {
+            "field": "share_band",
+            "title": "Income share"
+          },
+          {
+            "field": "index_score",
+            "title": "Index score"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/derived_housing_threshold_segments.csv"
+      },
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "fontWeight": 800,
+        "fontSize": 10,
+        "color": "#13203a"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid",
+          "type": "quantitative"
+        },
+        "y": {
+          "datum": "Rental affordability threshold"
+        },
+        "text": {
+          "field": "share_band"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 30,
+            "label": "30% stress line"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 2,
+        "color": "#071832"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 30,
+            "label": "30% stress line"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": -38,
+        "fontWeight": 900,
+        "color": "#071832"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ]
+}

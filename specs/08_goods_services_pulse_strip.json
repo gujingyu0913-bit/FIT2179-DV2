@@ -1,0 +1,102 @@
+{
+  "background": null,
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "title": {
+      "font": "Inter, system-ui, sans-serif",
+      "fontSize": 14,
+      "fontWeight": 800,
+      "color": "#13203a",
+      "anchor": "start"
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a",
+      "gridColor": "#dce9f4",
+      "tickColor": "#b7cadb",
+      "domainColor": "#a9bece"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "orient": "bottom",
+      "labelColor": "#40526b",
+      "titleColor": "#13203a"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "width": "container",
+  "height": 230,
+  "data": {
+    "url": "../data/goods_services.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 4
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "timeUnit": "yearmonth",
+      "axis": {
+        "title": null,
+        "format": "%b %y",
+        "labelAngle": -45
+      }
+    },
+    "y": {
+      "field": "series",
+      "type": "nominal",
+      "axis": {
+        "title": null,
+        "labelFontWeight": 900
+      }
+    },
+    "color": {
+      "field": "monthly_change",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -1.5,
+          0,
+          1.5
+        ],
+        "range": [
+          "#2166ac",
+          "#f7fbff",
+          "#c7292d"
+        ]
+      },
+      "title": "Monthly change (%)"
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "format": "%b %Y"
+      },
+      {
+        "field": "series"
+      },
+      {
+        "field": "index",
+        "format": ".1f"
+      },
+      {
+        "field": "monthly_change",
+        "title": "Monthly (%)",
+        "format": ".2f"
+      },
+      {
+        "field": "annual_change",
+        "title": "Annual (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

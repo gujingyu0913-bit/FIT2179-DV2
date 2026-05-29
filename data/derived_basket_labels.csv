@@ -1,0 +1,13 @@
+group,group_full,annual_change,category_type,rank_by_pressure,label_y,label_x
+Transport,Transport,8.9,essential/regulated,1,2,-1.0
+Clothing & footwear,Clothing and footwear,7.12,discretionary,2,8,-1.0
+Housing,Housing,6.51,essential/regulated,3,14,-1.0
+Education,Education,4.79,essential/regulated,4,20,-1.0
+All groups CPI,All groups CPI,4.57,benchmark,5,26,-1.0
+Alcohol & tobacco,Alcohol and tobacco,4.43,discretionary/regulated,6,32,-1.0
+Food & non-alcoholic beverages,Food and non-alcoholic beverages,3.1,essential/regulated,7,38,-1.0
+Health,Health,3.04,essential/regulated,8,44,-1.0
+Recreation & culture,Recreation and culture,2.84,discretionary,9,50,-1.0
+Insurance & financial services,Insurance and financial services,2.83,essential/regulated,10,56,-1.0
+Communication,Communication,1.41,essential/regulated,11,62,-1.0
+Furnishings & services,"Furnishings, household equipment and services",1.38,discretionary,12,68,-1.0

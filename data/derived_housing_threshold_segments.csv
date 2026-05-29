@@ -1,0 +1,9 @@
+category,share_band,index_score,start,end,mid,order
+Very affordable rents,15% or less,>200,0.0,15.0,7.5,1
+Affordable rents,15–20%,151–200,15.0,20.0,17.5,2
+Acceptable rents,20–25%,121–150,20.0,25.0,22.5,3
+Moderately unaffordable rents,25–30%,101–120,25.0,30.0,27.5,4
+Unaffordable rents,30–38%,81–100,30.0,38.0,34.0,5
+Severely unaffordable rents,38–60%,51–80,38.0,60.0,49.0,6
+Extremely unaffordable rents,60% or more,<50,60.0,60.0,60.0,7
+Critically unaffordable rents,75% or more,<40,75.0,60.0,67.5,8
